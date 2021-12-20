@@ -2,6 +2,8 @@ import React, { ReactElement } from "react";
 import { BlockAttributes } from "widget-sdk";
 import CSS from "csstype";
 
+import '../resources/css/styles.css';
+
 // https://github.com/pvoznyuk/react-live-clock
 import Clock from 'react-live-clock';
 
