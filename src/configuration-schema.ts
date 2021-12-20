@@ -7,26 +7,31 @@ import { JSONSchema7 } from "json-schema";
  */
 export const configurationSchema: JSONSchema7 = {
   properties: {
-    showstandardlist: {
+    showtimeclock: {
       type: "boolean",
-      title: "Standard list of world clocks",
+      title: "Local Time Clock",
       default: true,
     },
-    customactive: {
+    showstandardlist: {
       type: "boolean",
-      title: "Custom world clock",
+      title: "Standard List of World Clocks",
       default: false,
     },
-    customformat: {
+    customclockactive: {
+      type: "boolean",
+      title: "Custom World Clock",
+      default: false,
+    },
+    customclockformat: {
       type: "string",
       title: "Custom Format",
       default: "HH:mm:ss a",
     },
-    customtimezone: {
-      type: "string",
-      title: "Custom Format",
+    customclocktimezone: {
+      title: "Custom Timezone",
       default: "Europe/Berlin",
-    },
+      type: "string",
+    }
   },
 };
 
@@ -35,16 +40,19 @@ export const configurationSchema: JSONSchema7 = {
  * @see https://react-jsonschema-form.readthedocs.io/en/latest/api-reference/uiSchema/
  */
 export const uiSchema: UiSchema = {
+  showtimeclock: {
+    "ui:help": "Show local time clock.",
+  },
   showstandardlist: {
     "ui:help": "Enable standard list of world clocks (pre-defined).",
   },
-  customactive: {
+  customclockactive: {
     "ui:help": "Enable custom world clock (with custom format and timezone).",
   },
-  customformat: {
+  customclockformat: {
     "ui:help": "Enter custom format. Available formats: https://momentjs.com/docs/#/displaying/format/",
   },
-  customtimezone: {
+  customclocktimezone: {
     "ui:help": "Enter custom timezone. Available timezones (column TZ): https://en.wikipedia.org/wiki/List_of_tz_database_time_zones",
   },
 };

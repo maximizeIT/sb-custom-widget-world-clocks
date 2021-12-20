@@ -37,7 +37,7 @@ const factory: BlockFactory = (BaseBlockClass, _widgetApi) => {
      */
     public static get observedAttributes(): string[] {
       const defaults = ["content-language", "widget-title", "on-card"];
-      return [...defaults, "showstandardlist", "customactive", "customformat", "customtimezone"];
+      return [...defaults, "showtimeclock", "showstandardlist", "customclockactive", "customclockformat", "customclocktimezone"];
     }
 
     /**
@@ -56,7 +56,7 @@ const factory: BlockFactory = (BaseBlockClass, _widgetApi) => {
 const blockDefinition: BlockDefinition = {
     name: "custom-widget-world-clocks",
     factory: factory,
-    attributes: ["showstandardlist", "customactive", "customformat", "customtimezone"],
+    attributes: ["showtimeclock", "showstandardlist", "customclockactive", "customclockformat", "customclocktimezone"],
     blockLevel: 'block',
     configurationSchema: configurationSchema,
     uiSchema: uiSchema,
